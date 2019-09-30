@@ -28,7 +28,9 @@
         </form>
       </div>
     </nav>
-    <router-view/>
+    <div class="container-fluid">
+      <router-view/>
+    </div>
   </div>
 </template>
 
