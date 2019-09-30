@@ -1,8 +1,21 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to our Support site!</h1>
+      <p class="lead">If you have been experiencing any problems using our website, please visit our Help Centre page
+        or use the search functionality to find answers from our website.</p>
+      <hr class="my-4">
+      <p>If you cannot find an answer on our Help Centre, please feel free to chat with our support team via Live Chat.</p>
+      <router-link class="btn btn-primary btn-lg" to="/livechat" role="button">Live Chat</router-link>
+    </div>
+    <div class="row">
+      <div class="col-md-4">One</div>
+      <div class="col-md-4">Two</div>
+      <div class="col-md-4">Three</div>
+    </div>
   </div>
 </template>
+
 <script>
 export default {
   name: 'home',

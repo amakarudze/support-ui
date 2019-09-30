@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import about from '@/components/About'
+import contact from '@/components/Contact'
 import help from '@/components/Help'
 import home from '@/components/Home'
 import livechat from '@/components/LiveChat'
@@ -18,6 +19,11 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: about
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: contact
     },
     {
       path: '/help',
