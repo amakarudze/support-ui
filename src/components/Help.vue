@@ -11,9 +11,9 @@
     <div class="row">
        <div class="col-4">
          <h2>Browse by Categories</h2>
-         <ul>
-           <li v-for="category in categories" :key="category.id">
-             {{ category }}
+         <ul class="nav flex-column">
+           <li class="nav-item" v-for="category in categories" :key="category.id">
+             {{ category.name }}
            </li>
          </ul>
        </div>
@@ -38,7 +38,7 @@ export default {
     axios
       .get('http://127.0.0.1:8000/faqs/categories/')
       .then(response => {
-        this.categories = response.queryset
+        this.categories = response.data
         console.log(this.categories)
       })
       .catch(error => {
