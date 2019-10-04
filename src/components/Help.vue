@@ -13,7 +13,7 @@
          <h2>Browse by Categories</h2>
          <ul class="nav flex-column">
            <li class="nav-item" v-for="category in categories" :key="category.id">
-             <a class="nav-link" href="#">{{ category.name }}</a>
+             <a v-on:click="goToCategoryDetail(category.id)" class="nav-link" href="#">{{ category.name }}</a>
            </li>
          </ul>
        </div>
@@ -21,7 +21,7 @@
          <h2>Frequently Asked Questions</h2>
          <ul class="nav flex-column">
            <li class="nav-item" v-for="question in questions" :key="question.id">
-              <a class="nav-link" href="#">{{ question.question }}</a>
+              <a v-on:click="goToQuestionDetail(question.id)" class="nav-link" href="#">{{ question.question }}</a>
            </li>
         </ul>
        </div>
@@ -59,6 +59,14 @@ export default {
         console.log(error)
         this.errored = true
       })
+  },
+  methods: {
+    goToCategoryDetail (categoryId) {
+      this.$router.push({name: 'category', params: {catId: categoryId}})
+    },
+    goToQuestionDetail (questionId) {
+      this.$router.push({name: 'question', params: {qnId: questionId}})
+    }
   }
 }
 </script>
