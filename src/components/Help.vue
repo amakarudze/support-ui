@@ -13,7 +13,8 @@
          <h2>Browse by Categories</h2>
          <ul class="nav flex-column">
            <li class="nav-item" v-for="category in categories" :key="category.id">
-             <a v-on:click="goToCategoryDetail(category.id)" class="nav-link" href="#">{{ category.name }}</a>
+             <router-link :to="{ path: '/category/'+ category.id + '/' }" v-on:click="goToCategoryDetail(category.id)"
+                          class="nav-link" append>{{ category.name }}</router-link>
            </li>
          </ul>
        </div>
@@ -21,7 +22,8 @@
          <h2>Frequently Asked Questions</h2>
          <ul class="nav flex-column">
            <li class="nav-item" v-for="question in questions" :key="question.id">
-              <a v-on:click="goToQuestionDetail(question.id)" class="nav-link" href="#">{{ question.question }}</a>
+              <router-link :to="{ path: '/question/'+ question.id + '/' }" v-on:click="goToQuestionDetail(question.id)"
+                           class="nav-link" append>{{ question.question }}</router-link>
            </li>
         </ul>
        </div>
